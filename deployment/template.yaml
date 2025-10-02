@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS CLI Generator MCP Server
+
+Resources:
+  MCPFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: mcp_server.main
+      Runtime: python3.9
+      MemorySize: 1024
+      Timeout: 30
+      Events:
+        HttpApi:
+          Type: HttpApi
+      Policies:
+        - DynamoDBFullAccess
+        - S3FullAccess

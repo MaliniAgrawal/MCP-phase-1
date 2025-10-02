@@ -1,0 +1,6 @@
+mcp[server]
+fastapi
+uvicorn
+transformers
+torch
+boto3
